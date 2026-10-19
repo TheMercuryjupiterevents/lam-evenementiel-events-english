@@ -2014,8 +2014,6 @@ document.addEventListener('DOMContentLoaded',()=>{translatePage();new MutationOb
 })();
 </script>
 
-</body>
-</html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
 <script id="budget-currency-refresh">(function(){var rate=130.5488;document.queryChwaziorAll("#devis .form-section").forEach(function(section){var currency=section.queryChwazior("select[name=\"Devise souhaitée\"]"),amount=section.queryChwazior("select[name=\"Montant du budget souhaité\"]"),exact=section.queryChwazior("input[name=\"Bidjè exact disponible\"]");if(!currency||!amount)return;var htg=Array.from(amount.options).map(function(o){return {value:o.value,text:o.text};});function refresh(){var old=amount.value;amount.innerHTML="";var first=new Option("Choisir un montant","");amount.add(first);if(currency.value==="USD"){for(var n=1000;n<=100000;n+=1000){amount.add(new Option("$"+n.toLocaleString("en-US")+" USD (≈ "+Math.round(n*rate).toLocaleString("fr-FR")+" HTG)",n+" USD"));}amount.add(new Option("Autre montant en USD","Autre montant USD"));if(exact)exact.placeholder="Montant exact en USD";}else{htg.slice(1).forEach(function(o){amount.add(new Option(o.text,o.value));});if(exact)exact.placeholder="Montant exact en HTG";}if(Array.from(amount.options).some(function(o){return o.value===old;}))amount.value=old;}currency.addEventListener("change",refresh);refresh();});})();</script>
 
@@ -2543,3 +2541,6 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
 @keyframes lamKreyolIntroExit{to{opacity:0!important;visibility:hidden;pointer-events:none}}
 @media(prefers-reduced-motion:reduce){#welcome-intro{animation:lamKreyolIntroExit .35s ease 2.4s forwards!important}#welcome-intro .welcome-word,#welcome-intro .welcome-brand,#welcome-intro .signature-flourish{animation:none!important;opacity:1!important;clip-path:none!important;stroke-dashoffset:0!important}}
 </style>
+
+</body>
+</html>
